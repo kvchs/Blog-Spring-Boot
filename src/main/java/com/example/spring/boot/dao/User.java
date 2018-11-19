@@ -2,10 +2,15 @@ package com.example.spring.boot.dao;
 
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * 用户实体
  */
-
+@Entity
 public class User {
 
     public Long getId() {
@@ -33,11 +38,13 @@ public class User {
     }
 
     // 实体的唯一标识
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 自增策略
     private Long id;
     private String name;
     private String email;
 
-    public User() {
+    protected User() { // 防止直接使用
     }
 
     public User(Long id, String name, String email) {

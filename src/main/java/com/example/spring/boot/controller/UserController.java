@@ -21,7 +21,7 @@ public class UserController {
      */
     @GetMapping
     public ModelAndView list(Model model){
-        model.addAttribute("userList", userReository.listUsers());
+        model.addAttribute("userList", userReository.findAll());
         model.addAttribute("title", "用户管理");
         return new ModelAndView("users/list", "userModel" , model);
     }
@@ -34,7 +34,7 @@ public class UserController {
      */
     @GetMapping("/{id}")
     public ModelAndView view(@PathVariable("id") Long id, Model model){
-        model.addAttribute("userList", userReository.getUserById(id));
+        model.addAttribute("userList", userReository.findById(id));
         model.addAttribute("title", "查看用户");
         return new ModelAndView("users/view", "userModel" , model);
     }
@@ -47,15 +47,28 @@ public class UserController {
      */
     @GetMapping("/form")
     public ModelAndView createForm(Model model){
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new User(null, null, null));
         model.addAttribute("title", "创建用户");
         return new ModelAndView("users/form", "userModel" , model);
     }
 
     @PostMapping
     public ModelAndView saveOrUpdateUser(User user){
-        userReository.saveOrUpdateUser(user);
+        userReository.save(user);
         return new ModelAndView("redirect:/users");
+    }
+
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable("id") Long id){
+        userReository.deleteById(id);
+        return new ModelAndView("redirect:/users");
+    }
+
+    @GetMapping("/modify/{id}")
+    public ModelAndView modify(@PathVariable("id")Long id, Model model){
+        model.addAttribute("user", userReository.findById(id));
+        model.addAttribute("title", "修改用户");
+        return new ModelAndView("/users/form", "userModel", model);
     }
 }
 

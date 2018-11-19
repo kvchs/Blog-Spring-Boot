@@ -86,5 +86,9 @@ JPA（Java Persistence API）是用于管理Java EE和Java SE环境中的持久�
     
     
 Spring Data JPA用法介绍  
+CrudRepository  
+PagingAndSortingRepository  
+
 Spring Data JPA 、Hibernate、Spring Boot集成  
+d  
 数据持久化实战  
