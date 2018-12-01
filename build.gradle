@@ -52,6 +52,12 @@ dependencies {
     // https://mvnrepository.com/artifact/com.h2database/h2
 //    runtime group: 'com.h2database', name: 'h2', version: '1.4.197'
 
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch', version: '2.1.1.RELEASE'
+
+    // https://mvnrepository.com/artifact/net.java.dev.jna/jna
+//    compile group: 'net.java.dev.jna', name: 'jna', version: '5.1.0'
+
 
 
 }

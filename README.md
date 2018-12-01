@@ -90,5 +90,19 @@ CrudRepository
 PagingAndSortingRepository  
 
 Spring Data JPA 、Hibernate、Spring Boot集成  
-d  
+  
 数据持久化实战  
+#### ElasticSearch
+1. 高速可扩展的开源全文搜索和分析引擎  
+2. 快速地，实时的对大数据进行存储、搜索、分析  
+3. 用来支撑有复杂数据搜索需求的企业级应用  
+```
+ElasticSearch和Spring的集成
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch
+compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch', version: '2.1.1.RELEASE'
+
+// https://mvnrepository.com/artifact/net.java.dev.jna/jna
+compile group: 'net.java.dev.jna', name: 'jna', version: '5.1.0'
+
+
+```
